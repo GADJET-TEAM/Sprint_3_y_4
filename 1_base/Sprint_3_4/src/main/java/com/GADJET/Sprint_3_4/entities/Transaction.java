@@ -3,25 +3,25 @@ package com.GADJET.Sprint_3_4.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Transactions")
+@Table(name = "transactions")
 public class Transaction {
 
     //Atributos
     @Id
-    @Column(name = "Id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "Amount")
+    @Column(name = "amount", nullable = false)
     private double amount;
-    @Column(name = "Employee")
+    @Column(name = "employee", nullable = false)
     private String employee;
-    @Column(name = "Concept")
+    @Column(name = "concept", nullable = false)
     private String concept;
     private enum typeTran{
         Incomes,
         Expenses
     }
-    @Column(name = "Type of Transaction")
+    @Column(name = "type")
     typeTran type;
 
     //Constructor vacio
@@ -29,7 +29,7 @@ public class Transaction {
     }
 
     //Constructor con parametros
-    public Transaction(long id, Double amount, String employee, String concept, typeTran type) {
+    public Transaction(long id, double amount, String employee, String concept, typeTran type) {
         this.id = id;
         this.amount = amount;
         this.employee = employee;
@@ -38,6 +38,7 @@ public class Transaction {
     }
 
     //Getters and setters
+
     public long getId() {
         return id;
     }
@@ -46,11 +47,11 @@ public class Transaction {
         this.id = id;
     }
 
-    public Double getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
