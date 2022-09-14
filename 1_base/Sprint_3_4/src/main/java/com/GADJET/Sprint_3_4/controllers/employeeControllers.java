@@ -2,6 +2,7 @@ package com.GADJET.Sprint_3_4.controllers;
 
 import com.GADJET.Sprint_3_4.entities.Employee;
 import com.GADJET.Sprint_3_4.services.employeeServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class employeeControllers {
 
+    @Autowired
     employeeServices EMPS1;
 
     public employeeControllers(employeeServices EMPS1) {

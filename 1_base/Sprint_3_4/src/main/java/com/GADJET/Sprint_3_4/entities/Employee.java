@@ -1,6 +1,7 @@
 package com.GADJET.Sprint_3_4.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -10,7 +11,7 @@ public class Employee {
     //Atributos y columnas de entidades
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
@@ -20,8 +21,9 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "enterprise")
-    private String enterprise;
+    @ManyToOne()
+    @JoinColumn(name = "enterprise_id")
+    private Enterprise enterprise;
 
     private enum role{
         Manager,
@@ -31,12 +33,15 @@ public class Employee {
     @Column(name = "role")
     private role roleName;
 
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transaction> transaction1;
+
     // Constructor vacio
     public Employee() {
     }
 
     // Constructor con parametros
-    public Employee(long id, String name, String email,String enterprise, role roleName) {
+    public Employee(long id, String name, String email,Enterprise enterprise, role roleName) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -70,11 +75,11 @@ public class Employee {
         this.email = email;
     }
 
-    public String getEnterprise() {
+    public Enterprise getEnterprise() {
         return enterprise;
     }
 
-    public void setEnterprise(String enterprise) {
+    public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
 
