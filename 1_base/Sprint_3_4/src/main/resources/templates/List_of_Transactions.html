@@ -8,9 +8,9 @@
 <body>
 
 
-<div class="p-3 mb-2 bg-secondary text-white">LIST OF TRANSACTIONS</div>
+<div class="p-3 mb-2 bg-secondary text-white text-center">LIST OF TRANSACTIONS</div>
 
-<table class="table table-striped">
+<table class="table table-striped text-center">
     <thead>
     <tr>
         <th scope="col">id</th>
@@ -18,24 +18,34 @@
         <th scope="col">concept</th>
         <th scope="col">employee</th>
         <th scope="col">type</th>
+        <th>Actions</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr th:each="transactions : ${listtransactions}">
-        <th scope="row" th:text="${transactions.id}"></th>
-        <td th:text="${transactions.amount}"></td>
-        <td th:text="${transactions.concept}"></td>
-        <td th:text="${transactions.employee.name}"></td>
-        <td th:text="${transactions.type}"></td>
+    <tr th:each="transaction : ${listtransactions}">
+        <th scope="row" th:text="${transaction.id}"></th>
+        <td th:text="${transaction.amount}"></td>
+        <td th:text="${transaction.concept}"></td>
+        <td th:text="${transaction.employee.id}"></td>
+        <td th:text="${transaction.type}"></td>
+
+        <td>
+            <a th:href="@{/updatingTransaction/{id}(id=${transaction.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/deleteTransaction/{id}(id=${transaction.id})}" class="btn btn-danger">Delete</a>
+        </td>
 
     </tr>
     </tbody>
 </table>
 
+<div class="text-center">
+    <a th:href = "@{/newTransaction}" class="btn btn-primary btn-sm mb-3"> Add Transaction </a>
+</div>
+
 <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
-    <a th:href="@{/}" class="btn btn-primary mb-3">return</a>
-    <!--a th:href="@{/add}" class="btn btn-primary">Agregar Estudiante</a-->
+    <a th:href="@{/managementSystem}" class="btn btn-primary mb-3">return</a>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>MANAGEMENT SYSTEM</title>
+</head>
+<body>
+
+<h1 class="py-5 px-3 text-center">MANAGEMENT SYSTEM</h1>
+
+<div class="d-flex gap-4 justify-content-center">
+
+    <div class="card text-center" style="width: 18rem;">
+        <img src="img/building_1.jpg"  class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">ENTERPRISES</h5>
+            <p class="card-text">Essential Information about the Enterprise.</p>
+            <a th:href="@{/enterprises}" class="btn btn-primary mb-3">Go to Enterprises</a>
+
+        </div>
+    </div>
+
+    <div class="card text-center" style="width: 18rem;">
+        <img src="img/employees_2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">EMPLOYEES</h5>
+            <p class="card-text">List of the belonging employees in the enterprise.</p>
+            <a th:href="@{/employees}" class="btn btn-primary mb-3">Go to Employees</a>
+        </div>
+    </div>
+
+    <div class="card text-center" style="width: 18rem;">
+        <img src="img/transaction_1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">TRANSACTIONS</h5>
+            <p class="card-text">List of transactions done by the employees.</p>
+            <a th:href="@{/transactions}" class="btn btn-primary mb-3">go to Transactions</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
