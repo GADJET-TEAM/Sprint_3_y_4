@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>List of Enterprises</title>
+</head>
+<body>
+
+
+<div class="p-3 mb-2 bg-secondary text-white text-center">LIST OF ENTERPRISES</div>
+
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">nit</th>
+        <th scope="col">phone</th>
+        <th scope="col">address</th>
+        <th scope="col">city</th>
+        <th>Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="enterprise : ${listenterprises}">
+        <th scope="row" th:text="${enterprise.id}"></th>
+        <td th:text="${enterprise.name}"></td>
+        <td th:text="${enterprise.nit}"></td>
+        <td th:text="${enterprise.phone}"></td>
+        <td th:text="${enterprise.address}"></td>
+        <td th:text="${enterprise.city}"></td>
+
+        <td>
+            <a th:href="@{/updatingEnterprise/{id}(id=${enterprise.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/deleteEnterprise/{id}(id=${enterprise.id})}" class="btn btn-danger">Delete</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div class="text-center">
+    <a th:href = "@{/newEnterprise}" class="btn btn-primary btn-sm mb-3"> Add Enterprise </a>
+</div>
+
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+    <a th:href="@{/managementSystem}" class="btn btn-primary mb-3">return</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
