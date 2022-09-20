@@ -8,18 +8,55 @@
 <body>
 <div class="container">
     <hr>
-    <h2>Updating a Transaction</h2>
+    <div>
+        <h2 class="text-center">Updating a Transaction</h2>
+    </div>
+
     <form action="#" th:action="@{/saveTransaction}" th:object="${transaction}" method="POST">
         <!-- Add hidden form field to handle update -->
         <input type="hidden" th:field="*{id}"/>
-        <input type="text" th:field="*{amount}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{employee.id}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{concept}" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{type}" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2"> Update Transaction</button>
+        <div class="mb-4 row d-flex justify-content-center">
+            <div class="col-sm-2">
+                <label for="name" class="col-form-label h1">Amount:</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{amount}" class="form-control mb-4 col-4">
+            </div>
+        </div>
+        <div class="mb-4 row d-flex justify-content-center">
+            <div class="col-sm-2">
+                <label for="name" class="col-form-label h1">Amount:</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{employee.id}" class="form-control mb-4 col-4">
+            </div>
+        </div>
+        <div class="mb-4 row d-flex justify-content-center">
+            <div class="col-sm-2">
+                <label for="name" class="col-form-label h1">Amount:</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{concept}" class="form-control mb-4 col-4">
+            </div>
+        </div>
+        <div class="mb-4 row d-flex justify-content-center">
+            <div class="col-sm-2">
+                <label for="name" class="col-form-label h1">Amount:</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{type}" class="form-control mb-4 col-4">
+            </div>
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-info col-2"> Update Transaction</button>
+        </div>
+
     </form>
     <hr>
-    <a th:href = "@{/transactions}"> Back to Transaction List</a>
+    <div align="center">
+        <a th:href = "@{/transactions}"> Back to Transaction List</a>
+    </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
