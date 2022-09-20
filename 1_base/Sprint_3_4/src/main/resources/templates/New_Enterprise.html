@@ -7,47 +7,47 @@
 </head>
 <body>
 <div class="container">
-    <h2>Adding an enterprise</h2>
+    <h2 class="text-center">Adding an Enterprise</h2>
     <hr>
     <form action="#" th:action="@{/saveEnterprise}" th:object="${enterprise}" method="POST">
 
-        <div class="mb-4 row">
+        <div class="mb-4 row d-flex justify-content-center">
             <div class="col-sm-2">
-                <label for="name" class="col-form-label h1">Name of the enterprise:</label>
+                <label for="name" class="col-form-label h1">Name Enterprise:</label>
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control" th:field="*{name}">
             </div>
         </div>
 
-        <div class="mb-4 row">
+        <div class="mb-4 row d-flex justify-content-center">
             <div class="col-sm-2">
-                <label for="name" class="col-form-label h1">NIT of the enterprise:</label>
+                <label for="name" class="col-form-label h1">NIT Enterprise:</label>
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control" th:field="*{nit}">
             </div>
         </div>
 
-        <div class="mb-4 row">
+        <div class="mb-4 row d-flex justify-content-center">
             <div class="col-sm-2">
-                <label for="name" class="col-form-label h1">Phone of the enterprise:</label>
+                <label for="name" class="col-form-label h1">Phone Enterprise:</label>
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control" th:field="*{phone}">
             </div>
         </div>
 
-        <div class="mb-4 row">
+        <div class="mb-4 row d-flex justify-content-center">
             <div class="col-sm-2">
-                <label for="name" class="col-form-label h1">Address of the enterprise:</label>
+                <label for="name" class="col-form-label h1">Address Enterprise:</label>
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control" th:field="*{address}">
             </div>
         </div>
 
-        <div class="mb-4 row">
+        <div class="mb-4 row d-flex justify-content-center">
             <div class="col-sm-2">
                 <label for="name" class="col-form-label h1">City:</label>
             </div>
@@ -56,11 +56,15 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-info col-2"> Save Enterprise</button>
-    </form>
+        <div align="center">
+            <button type="submit" class="btn btn-info col-2"> Save Enterprise</button>
+        </div>
+        </form>
     <hr>
 
-    <a th:href = "@{/enterprises}" class="btn btn-primary mb-3">return</a>
+        <div align="center">
+            <a th:href = "@{/enterprises}" class="btn btn-primary mb-3">return</a>
+        </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
